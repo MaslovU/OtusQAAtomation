@@ -1,0 +1,2 @@
+try in console:
+py.test -s homework3.py
