@@ -36,5 +36,5 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def client(request):
-    "client"
+    """client"""
     return APIClient(request.config.getoption('--address'))

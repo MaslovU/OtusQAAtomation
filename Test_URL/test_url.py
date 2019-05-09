@@ -2,10 +2,15 @@
 URLS = ["https://ya.ru", "https://google.com", "https://mail.ru"]
 
 
-def test_urls(address):
-    """Test URLS"""
+def web_site(address):
+    """Address"""
     if address == URLS:
-        print(address)
+        address = address
     else:
         assert address in URLS
-        print(address)
+    return address
+
+
+def test_urls(address):
+    """Test URLS"""
+    print(address)
