@@ -1,9 +1,10 @@
 """ARGPARSE"""
 import argparse
+import subprocess
+ALL_SITE = 'python -m pytest -s -v /home/yury/PycharmProjects/Otus/Test_API'
 DOG = 'python -m pytest -s -v /home/yury/PycharmProjects/Otus/Test_API/test_api_dogs.py'
 OPENDB = 'python -m pytest -s -v /home/yury/PycharmProjects/Otus/Test_API/test_api_openbrewerydb.py'
-CDNJS = '(venv) yury@yury-Aspire-ES1-523:~/PycharmProjects/Otus$ python Test_API/test_cdnjs_com.py'
-ALL_SITE = 'python -m pytest -s -v /home/yury/PycharmProjects/Otus/Test_API'
+CDNJS = 'python -m pytest -s -v /home/yury/PycharmProjects/Otus/Test_API/test_cdnjs_com.py'
 
 PARSER = argparse.ArgumentParser(description='Test API throw Argparse')
 PARSER.add_argument('--site',
@@ -17,12 +18,12 @@ WEBSITES = ["dog", "openbrewerydb", "cdnjs"]
 
 
 if URLS_ADDR == WEBSITES:
-    print(ALL_SITE)
+    subprocess.run(ALL_SITE, shell=True)
 else:
     assert URLS_ADDR in WEBSITES
     if URLS_ADDR == 'dog':
-        print(DOG)
+        subprocess.run(DOG, shell=True)
     if URLS_ADDR == 'openbrewerydb':
-        print(OPENDB)
+        subprocess.run(OPENDB, shell=True)
     if URLS_ADDR == 'cdnjs':
-        input(CDNJS)
+        subprocess.run(CDNJS, shell=True)
